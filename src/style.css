@@ -2,6 +2,7 @@
   --header-color: #313131;
   --button-color: #488dd9;
   --footer-color: #dadde6;
+  --form-color: #bfc1cd;
   --text-color: #ffffff;
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
@@ -55,7 +56,137 @@ footer {
   align-items: center;
 }
 
-@media (width <= 1350px) {
+main {
+  min-height: calc(100vh - 130px);
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 25%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-buttons {
+  border-radius: 10px;
+  border-style: none;
+  color: var(--text-color);
+  background-color: var(--button-color);
+  width: 200px;
+  height: 40px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.nav-buttons:hover {
+  opacity: 0.85;
+}
+
+section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#sectionImg {
+  width: 400px;
+  margin-left: 35px;
+}
+
+.section-button {
+  border-radius: 20px;
+  border-style: none;
+  color: var(--text-color);
+  background-color: var(--button-color);
+  margin-top: 30px;
+  width: 400px;
+  height: 50px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.section-button:hover {
+  opacity: 0.85;
+}
+
+/* Cadastro / Login */
+
+#main-cadastro {
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+#cadastro-form {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--form-color);
+  width: 90%;
+  max-width: 500px;
+  padding: 40px;
+  border-radius: 0 50px 0px 50px;
+  box-sizing: border-box;
+}
+
+#cadastro-fieldtext {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  width: 100%;
+}
+
+#cadastro-fieldtext label {
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+#cadastro-fieldtext input {
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  padding: 0 15px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.cadastrar-button {
+  border-radius: 10px;
+  border-style: none;
+  color: var(--text-color);
+  background-color: var(--button-color);
+  width: 100%;
+  height: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: opacity 0.2s;
+}
+
+.cadastrar-button:hover {
+  opacity: 0.85;
+}
+
+.login-link {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 20px;
+  color: #000;
+}
+
+@media (width <= 768px) {
   header {
     justify-content: center;
     border-bottom-right-radius: 0px;
@@ -64,5 +195,24 @@ footer {
   div {
     border-top-left-radius: 0px;
     width: 100%;
+  }
+  main {
+    justify-content: center;
+    gap: 40px;
+  }
+  nav {
+    margin-top: 30px;
+    position: static;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .nav-buttons {
+    width: 300px;
+    height: 50px;
+  }
+
+  section {
+    margin-top: 0;
   }
 }
