@@ -120,13 +120,13 @@ section {
 
 /* Cadastro / Login */
 
-#main-cadastro {
+#main-auth {
   align-items: center;
   justify-content: center;
   gap: 30px;
 }
 
-#cadastro-form {
+#auth-form {
   display: flex;
   flex-direction: column;
   background-color: var(--form-color);
@@ -137,20 +137,20 @@ section {
   box-sizing: border-box;
 }
 
-#cadastro-fieldtext {
+#auth-fieldtext {
   display: flex;
   flex-direction: column;
   border: none;
   width: 100%;
 }
 
-#cadastro-fieldtext label {
+#auth-fieldtext label {
   margin-bottom: 5px;
   font-size: 16px;
   font-weight: 500;
 }
 
-#cadastro-fieldtext input {
+#auth-fieldtext input {
   width: 100%;
   height: 40px;
   border: none;
