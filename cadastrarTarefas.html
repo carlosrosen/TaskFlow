@@ -10,14 +10,19 @@
       <p id="headerIcon">📝</p>
       <h1 id="headerText"><a href="index.html">TaskFlow</a></h1>
     </header>
-    <main id="main-cadastrar-task">
+    <main id="main-cadastrar-tarefa">
       <h2>Cadastrar nova tarefas</h2>
-      <form id="form-cadastrar-task" action="" method="get">
+      <form id="form-cadastrar-tarefa" action="" method="get">
         <fieldset>
           <label for="titulo">Título *</label>
-          <input type="text" name="titulo" placeholder="Insira o título da tarefa" required>
-          <label for="prazo" >Prazo *</label>
-          <input name="prazo" type="datetime-local" required>
+          <input
+            type="text"
+            name="titulo"
+            placeholder="Insira o título da tarefa"
+            required
+          />
+          <label for="prazo">Prazo *</label>
+          <input name="prazo" type="datetime-local" required />
           <label for="nivel-prioridade">Nivel de prioridade</label>
           <select name="nivel-prioridade">
             <option value="Urgente">Urgente</option>
@@ -26,14 +31,18 @@
             <option value="Baixo">Baixo</option>
           </select>
           <label name="descricao">Descrição</label>
-          <textarea name="descricao" placeholder="Insira a descrição" cols="5"></textarea>
+          <textarea
+            name="descricao"
+            placeholder="Insira a descrição"
+            cols="5"
+          ></textarea>
         </fieldset>
         <button type="submit">Cadastrar Tarefa</button>
       </form>
-      <button name="minhas-tarefas">Minhas Tarefas</button>
+      <button id="tarefa-button" name="minhas-tarefas">Minhas Tarefas</button>
     </main>
-    <div id="footer-decoration"></div>
-    <footer>© 2026 TaskFlow</footer>
+    <div></div>
+    <footer>© 2026 tarefaFlow</footer>
     <script src="src/script.js" defer></script>
   </body>
 </html>
