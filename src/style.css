@@ -185,7 +185,7 @@ section {
   color: #000;
 }
 
-@media (width <= 768px) {
+@media (width <= 1000px) {
   header {
     justify-content: center;
     border-bottom-right-radius: 0px;
