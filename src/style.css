@@ -177,11 +177,10 @@ section {
   opacity: 0.85;
 }
 
-.login-link {
+.redirect-link {
   background: transparent;
-  border: none;
+  text-decoration: none;
   font-size: 20px;
-  cursor: pointer;
   margin-top: 20px;
   color: #000;
 }
