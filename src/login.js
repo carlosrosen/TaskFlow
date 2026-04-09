@@ -20,6 +20,11 @@ document
     const email = document.getElementById("email").value.trim();
     const senha = document.getElementById("senha").value.trim();
 
+    if (!email || !senha) {
+      alert("Por favor, preencha todos os campos obrigatórios.");
+      return;
+    }
+
     let usuarios = JSON.parse(localStorage.getItem("taskflowUsuarios")) || {};
 
     if (!usuarios[email] || usuarios[email].senha != senha) {
