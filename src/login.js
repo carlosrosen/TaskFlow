@@ -2,7 +2,7 @@ async function verificarSessao() {
   try {
     const cookie = await cookieStore.get("usuarioLogado");
     if (cookie) {
-      window.location.href = "tarefas.html";
+      window.location.href = "listarTarefas.html";
     }
   } catch (error) {
     console.error("Erro ao tentar verificar o cookie:", error);
@@ -40,7 +40,7 @@ document
         path: "/",
       });
       alert("Login realizado com sucesso!");
-      window.location.href = "tarefas.html";
+      window.location.href = "listarTarefas.html";
     } catch (error) {
       console.error("Erro ao salvar o cookie:", error);
       alert("Ocorreu um erro no login.");

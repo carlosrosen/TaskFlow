@@ -1,6 +1,7 @@
 function getIdCounter(){
+    let tarefas = localStorage.getItem('tarefas');
     let id = localStorage.getItem('id');
-        if(id === 'NaN'|| id === null){
+        if(id === 'NaN'|| id === null || tarefas === null){
             id = 1;
         }else{
             id = Number.parseInt(id);
@@ -51,16 +52,16 @@ async function salvarTarefa(e,retorno,isNewTask){
     if(tarefas === null){
         tarefas = JSON.parse(`{"${email}": []}`);
     }
-    id++;
     if(tarefas[email] === undefined){
         tarefas[email] = [newTask]
     }else{
         if(isNewTask){
             tarefas[email].push(newTask)
+            id++;
         }else{
-            for(let i in tarefas){
-                if(tarefas[i]['id'] === id){
-                    tarefas[i] = newTask;
+            for(let i = 0; i < tarefas[email].length ;i++){
+                if(tarefas[email][i]['id'] === id){
+                    tarefas[email][i] = newTask;
                 }
             }
         }

@@ -23,6 +23,11 @@ body>aside>header {
   height: 50px;
 }
 
+#username{
+  margin-left: auto;
+  margin-right: auto;
+}
+
 body{
   display: flex;
   flex: 1;

@@ -74,8 +74,8 @@ function descarregarTarefas(){
 }
 
 function editarTarefa(id){
-    const url = window.location.href;
-    window.location.replace(url[0]+'/'+url[1]+'/'+ url[2]+`/editarTarefa?id=${id}`);
+    const url = window.location.href.split('/');
+    window.location.replace(url[0]+'/'+url[1]+'/'+ url[2]+`/editarTarefas.html?id=${id}`);
 }
 
 async function deletarTarefa(id){
@@ -96,12 +96,31 @@ function definirCorPrioridade(nivel){
     }else if( nivel === 'Medio'){
         return '#E4C931';
     }else if(nivel === 'Alto'){
-        return '#ffae00';
+        return '#d87700';
     }else if(nivel === 'Urgente'){
         return '#ff0000';
     }
 }
 
+async function logout(){
+    await cookieStore.delete('usuarioLogado');
+    const url = window.location.href.split('/')
+    window.location.replace(url[0]+'/'+url[1]+'/'+url[2]+'/login.html'); 
+}
+
+function alterarPagina(name){
+    const url = window.location.href.split('/')
+    window.location.replace(url[0]+'/'+url[1]+'/'+url[2]+`/${name}`); 
+}
+
+async function carregarNome() {
+    const usernameInp = document.getElementById('username');
+    const users = JSON.parse(localStorage.getItem('taskflowUsuarios'));
+    const userlogged = await cookieStore.get('usuarioLogado');
+    usernameInp.innerText = `User: ${users[userlogged.value]['nome']}`;
+}
+
 if(window.location.href.split('/')[3].split('?')[0] === 'listarTarefas.html'){
+    carregarNome();
     carregarTarefas();
 }
