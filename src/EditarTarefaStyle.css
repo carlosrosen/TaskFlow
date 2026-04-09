@@ -1,0 +1,183 @@
+:root {
+  --header-color: #313131;
+  --button-color: #488dd9;
+  --footer-color: #dadde6;
+  --form-color: #bfc1cd;
+  --text-color: #ffffff;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+body>header>a {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  color: var(--text-color);
+  background-color: var(--header-color);
+  border-bottom-right-radius: 12px;
+  left: 0;
+  width: 75%;
+  height: 50px;
+  text-decoration: none;
+}
+
+#headerIcon {
+  font-size: 30px;
+  margin-left: 10px;
+}
+
+#headerText {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#headerText a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body>div {
+  align-self: flex-end;
+  background-color: var(--header-color);
+  border-top-left-radius: 12px;
+  right: 0;
+  width: 75%;
+  height: 50px;
+}
+
+body>footer {
+  width: 100%;
+  height: 30px;
+  background-color: #e2e6eb;
+  color: #000000;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Página de criar tarefas */
+
+#main-editar-tarefa {
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding-top: 20px;
+}
+
+#main-editar-tarefa h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#form-editar-tarefa {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--form-color);
+  width: 90%;
+  max-width: 600px;
+  padding: 30px;
+  padding-bottom: 10px;
+  border-radius: 0 50px 0px 50px;
+  box-sizing: border-box;
+}
+
+#form-editar-tarefa fieldset {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  width: 100%;
+}
+
+#form-editar-tarefa label {
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+#form-editar-tarefa input,
+select,
+textarea {
+  width: 100%;
+  min-height: 40px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+#form-editar-tarefa>fieldset>#color-inp{
+  width: 60px;
+}
+
+#form-editar-tarefa textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+#form-editar-tarefa button,
+#tarefa-button {
+  border-radius: 10px;
+  border-style: none;
+  color: var(--text-color);
+  background-color: var(--button-color);
+  width: 100%;
+  height: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: opacity 0.2s;
+  margin-bottom: 30px;
+}
+
+#tarefa-button {
+  width: 80%;
+  max-width: 400px;
+}
+
+@media (width <= 1000px) {
+  body>header>a {
+    justify-content: center;
+    border-bottom-right-radius: 0px;
+    width: 100%;
+  }
+
+
+  #main-editar-tarefa>form>fieldset{
+    flex-shrink: 0;
+    min-width: auto;
+  }
+
+  body>div {
+    border-top-left-radius: 0px;
+    width: 100%;
+  }
+
+  body>main {
+    justify-content: center;
+    gap: 30px;
+  }
+
+  #tarefa-button {
+    margin-bottom: 40px;
+  }
+}
