@@ -24,6 +24,14 @@ header {
   height: 50px;
 }
 
+header > a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
 #headerIcon {
   font-size: 30px;
   margin-left: 10px;
@@ -75,14 +83,16 @@ nav {
 }
 
 .nav-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 10px;
-  border-style: none;
+  border: none;
+  text-decoration: none;
   color: var(--text-color);
   background-color: var(--button-color);
   width: 200px;
   height: 40px;
-  cursor: pointer;
-  transition: opacity 0.2s;
 }
 
 .nav-buttons:hover {
@@ -103,15 +113,17 @@ section {
 }
 
 .section-button {
-  border-radius: 20px;
-  border-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  text-decoration: none;
   color: var(--text-color);
   background-color: var(--button-color);
+  border-radius: 20px;
   margin-top: 30px;
   width: 400px;
   height: 50px;
-  cursor: pointer;
-  transition: opacity 0.2s;
 }
 
 .section-button:hover {
