@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="src/listarTarefas.css" />
+    <title>📝 TaskFlow - Listar Tarefas</title>
+  </head>
+  <body>
+    <aside>
+        <header>
+          <a class="no-visible-link" href="index.html">
+            <p id="headerIcon">📝</p>
+            <p id="headerText">TaskFlow</p>
+          </a>
+        </header>
+        <nav>
+            <button onclick="alterarPagina('index.html')"><img src="/exit.png">Logout</button>
+        </nav>
+    </aside>
+    <main>
+        <button onclick="alterarPagina('cadastrarTarefa.html')"><img src="/plus.png">Cadastrar tarefa</button>
+        <section id="section-cards-tarefas">
+        </section>
+    </main>
+    <div></div>
+    <footer>© 2026 TaskFlow</footer>
+    <script src="src/listarTarefa.js"></script>
+  </body>
+</html>
