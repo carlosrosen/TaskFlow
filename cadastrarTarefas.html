@@ -7,8 +7,10 @@
   </head>
   <body>
     <header class="header-page">
-      <p id="headerIcon">📝</p>
-      <h1 id="headerText"><a href="index.html">TaskFlow</a></h1>
+      <a href="index.html">
+        <p id="headerIcon">📝</p>
+        <h1 id="headerText">TaskFlow</h1>
+      </a>
     </header>
     <main id="main-cadastrar-tarefa">
       <h2>Cadastrar nova tarefas</h2>
@@ -32,10 +34,12 @@
           </select>
           <label name="descricao">Descrição</label>
           <textarea
-            name="descricao"
-            placeholder="Insira a descrição"
-            cols="5"
+          name="descricao"
+          placeholder="Insira a descrição"
+          cols="5"
           ></textarea>
+          <label for="cor">Cor acessório da task</label>
+          <input id="color-inp" name="cor" type="color">
         </fieldset>
         <button type="submit">Cadastrar Tarefa</button>
       </form>
@@ -43,6 +47,6 @@
     </main>
     <div></div>
     <footer>© 2026 tarefaFlow</footer>
-    <script src="src/script.js" defer></script>
+    <script src="src/ScriptCadastrarEditarTarefas.js"></script>
   </body>
 </html>

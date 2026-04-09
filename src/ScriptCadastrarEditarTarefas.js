@@ -1,4 +1,5 @@
-const cadastrarTarefa= document.getElementById('form-cadastrar-task')
+const cadastrarTarefa= document.getElementById('form-cadastrar-tarefa');
+
 cadastrarTarefa.addEventListener('submit',async (e)=>{
     let tarefas = JSON.parse(localStorage.getItem('tarefas'));
     let id = localStorage.getItem('id');
@@ -8,18 +9,19 @@ cadastrarTarefa.addEventListener('submit',async (e)=>{
         id = Number.parseInt(id);
     }
     e.preventDefault(); 
-    const user = await cookieStore.get('email');
-    if(user.value === null){
+    const user = await cookieStore.get('usuarioLogado');
+    if( user === null || user.value === null){
         let url = window.location.href.split('/');
         newUrl = new URL(url[0]+url[1]+ url[2]+'/login.html');
         alert('você não esta logado, redirecionando para a pagina de login');
-        window.location.replace(newUrl)
+        window.location.replace(newUrl);
         return;
     }
     const email = user.value;
     const titulo = document.querySelector('input[name="titulo"]');
     const prazo = document.querySelector('input[name="prazo"]');
     const nivelPrioridade = document.querySelector('select[name="nivel-prioridade"]');
+    const cor = document.getElementById('color-inp');
     const descricao = document.querySelector('textarea[name="descricao"]');
     if(titulo.value === '' || titulo.value === null){
         alert('Defina um título para a tarefa.');
@@ -36,6 +38,7 @@ cadastrarTarefa.addEventListener('submit',async (e)=>{
         ,'prazo': prazo.value
         ,'nivel_prioridade': nivelPrioridade.value
         ,'descricao': descricao.value
+        ,'color': cor.value
     };
     if(tarefas === null){
         tarefas = JSON.parse(`{"${email}": []}`);
