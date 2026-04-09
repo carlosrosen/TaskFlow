@@ -1,0 +1,229 @@
+:root {
+  --header-color: #313131;
+  --button-color: #488dd9;
+  --footer-color: #dadde6;
+  --form-color: #bfc1cd;
+  --text-color: #ffffff;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  color: var(--text-color);
+  background-color: var(--header-color);
+  border-bottom-right-radius: 12px;
+  left: 0;
+  width: 75%;
+  height: 50px;
+}
+
+header > a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+#headerIcon {
+  font-size: 30px;
+  margin-left: 10px;
+}
+#headerText {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+div {
+  position: absolute;
+  bottom: 25px;
+  background-color: var(--header-color);
+  border-top-left-radius: 12px;
+  right: 0;
+  width: 75%;
+  height: 50px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  background-color: #e2e6eb;
+  color: #000000;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  min-height: calc(100vh - 130px);
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 25%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: none;
+  text-decoration: none;
+  color: var(--text-color);
+  background-color: var(--button-color);
+  width: 200px;
+  height: 40px;
+}
+
+.nav-buttons:hover {
+  opacity: 0.85;
+}
+
+section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#sectionImg {
+  width: 400px;
+  margin-left: 35px;
+}
+
+.section-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  text-decoration: none;
+  color: var(--text-color);
+  background-color: var(--button-color);
+  border-radius: 20px;
+  margin-top: 30px;
+  width: 400px;
+  height: 50px;
+}
+
+.section-button:hover {
+  opacity: 0.85;
+}
+
+/* Cadastro / Login */
+
+#main-auth {
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+#auth-form {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--form-color);
+  width: 90%;
+  max-width: 500px;
+  padding: 40px;
+  border-radius: 0 50px 0px 50px;
+  box-sizing: border-box;
+}
+
+#auth-fieldtext {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  width: 100%;
+}
+
+#auth-fieldtext label {
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+#auth-fieldtext input {
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  padding: 0 15px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.cadastrar-button {
+  border-radius: 10px;
+  border-style: none;
+  color: var(--text-color);
+  background-color: var(--button-color);
+  width: 100%;
+  height: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: opacity 0.2s;
+}
+
+.cadastrar-button:hover {
+  opacity: 0.85;
+}
+
+.redirect-link {
+  background: transparent;
+  text-decoration: none;
+  font-size: 20px;
+  margin-top: 20px;
+  color: #000;
+}
+
+@media (width <= 1000px) {
+  header {
+    justify-content: center;
+    border-bottom-right-radius: 0px;
+    width: 100%;
+  }
+  div {
+    border-top-left-radius: 0px;
+    width: 100%;
+  }
+  main {
+    justify-content: center;
+    gap: 40px;
+  }
+  nav {
+    margin-top: 30px;
+    position: static;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .nav-buttons {
+    width: 300px;
+    height: 50px;
+  }
+
+  section {
+    margin-top: 0;
+  }
+}
