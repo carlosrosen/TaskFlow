@@ -1,12 +1,20 @@
-async function carregarTarefas(){
-    const user = await cookieStore.get('usuarioLogado');
-    const url = window.location.href.split('/');
-    if( user === null || user.value === null){
-        alert('você não está logado, redirecionando para a pagina de login.');
-        window.location.replace(url[0]+'/'+url[1]+'/'+url[2]+'/login.html'); 
+carregarNome();
+async function getUser() {
+    let user = null;
+    try{
+        user = await cookieStore.get('usuarioLogado');
+    } catch (error) {
+        console.error("Erro ao verificar os cookies:", error);
+        alert("Ocorreu um erro ao tentar validar usuário.");
     }
+    return user;
+}
+async function carregarTarefas(){
+    const urlAtual = window.location.href.split('/');
+    const user = await getUser(); //usuario é validado no inicio do script.
     const tarefas = JSON.parse(localStorage.getItem('tarefas'));
     const userTasks = tarefas[user.value];
+    if(userTasks === undefined)return;
     const sectionTasks = document.getElementById('section-cards-tarefas');
     userTasks.forEach(element => {
         const tituloBox = document.createElement('header');
@@ -74,13 +82,13 @@ function descarregarTarefas(){
 }
 
 function editarTarefa(id){
-    const url = window.location.href.split('/');
-    window.location.replace(url[0]+'/'+url[1]+'/'+ url[2]+`/editarTarefas.html?id=${id}`);
+    const urlAtual = window.location.href.split('/');
+    window.location.replace(urlAtual[0]+'/'+urlAtual[1]+'/'+ urlAtual[2]+`/editarTarefas.html?id=${id}`);
 }
 
 async function deletarTarefa(id){
     const tarefas = JSON.parse(localStorage.getItem('tarefas'));
-    const user = await cookieStore.get('usuarioLogado');
+    const user = await getUser();
     if(tarefas === null || user === null) return;
     const tarefas_atualizada = tarefas[user.value].filter((task)=>task['id'] !== id);
     tarefas[user.value] = tarefas_atualizada;
@@ -104,23 +112,27 @@ function definirCorPrioridade(nivel){
 
 async function logout(){
     await cookieStore.delete('usuarioLogado');
-    const url = window.location.href.split('/')
-    window.location.replace(url[0]+'/'+url[1]+'/'+url[2]+'/login.html'); 
+    const urlAtual = window.location.href.split('/')
+    window.location.replace(urlAtual[0]+'/'+urlAtual[1]+'/'+urlAtual[2]+'/login.html'); 
 }
 
 function alterarPagina(name){
-    const url = window.location.href.split('/')
-    window.location.replace(url[0]+'/'+url[1]+'/'+url[2]+`/${name}`); 
+    const urlAtual = window.location.href.split('/')
+    window.location.replace(urlAtual[0]+'/'+urlAtual[1]+'/'+urlAtual[2]+`/${name}`); 
 }
 
 async function carregarNome() {
     const usernameInp = document.getElementById('username');
     const users = JSON.parse(localStorage.getItem('taskflowUsuarios'));
-    const userlogged = await cookieStore.get('usuarioLogado');
+    const userlogged = await getUser();
+    if( userlogged === null || userlogged.value === null){
+        const urlAtual = window.location.href.split('/');
+        alert('você não está logado, redirecionando para a pagina de login.');
+        window.location.replace(urlAtual[0]+'/'+urlAtual[1]+'/'+urlAtual[2]+'/login.html'); 
+    }
     usernameInp.innerText = `User: ${users[userlogged.value]['nome']}`;
 }
 
 if(window.location.href.split('/')[3].split('?')[0] === 'listarTarefas.html'){
-    carregarNome();
     carregarTarefas();
 }

@@ -1,3 +1,15 @@
+carregarNome();
+async function getUser() {
+    let user = null;
+    try{
+        user = await cookieStore.get('usuarioLogado');
+    } catch (error) {
+        console.error("Erro ao verificar os cookies:", error);
+        alert("Ocorreu um erro ao tentar validar usuário.");
+    }
+    return user;
+}
+
 function getIdCounter(){
     let tarefas = localStorage.getItem('tarefas');
     let id = localStorage.getItem('id');
@@ -10,22 +22,15 @@ function getIdCounter(){
 }
 
 async function salvarTarefa(e,retorno,isNewTask){
-        e.preventDefault(); 
-        let tarefas = JSON.parse(localStorage.getItem('tarefas'));
-        let id;
-        if(isNewTask){
-            id = getIdCounter();
-        }else{
-            id = getParamTaskId()
-        }
-        const user = await cookieStore.get('usuarioLogado');
-        if( user === null || user.value === null){
-            let url = window.location.href.split('/');
-            newUrl = new URL(url[0]+url[1]+ url[2]+'/login.html');
-            alert('você não esta logado, redirecionando para a pagina de login');
-        window.location.replace(newUrl);
-        return;
+    e.preventDefault(); 
+    let tarefas = JSON.parse(localStorage.getItem('tarefas'));
+    let id;
+    if(isNewTask){
+        id = getIdCounter();
+    }else{
+        id = getParamTaskId();
     }
+    const user = await getUser(); //ao carregar o script ele ja valida se tem usuário.
     const email = user.value;
     const titulo = document.querySelector('input[name="titulo"]');
     const prazo = document.querySelector('input[name="prazo"]');
@@ -53,10 +58,10 @@ async function salvarTarefa(e,retorno,isNewTask){
         tarefas = JSON.parse(`{"${email}": []}`);
     }
     if(tarefas[email] === undefined){
-        tarefas[email] = [newTask]
+        tarefas[email] = [newTask];
     }else{
         if(isNewTask){
-            tarefas[email].push(newTask)
+            tarefas[email].push(newTask);
             id++;
         }else{
             for(let i = 0; i < tarefas[email].length ;i++){
@@ -74,25 +79,18 @@ async function salvarTarefa(e,retorno,isNewTask){
     prazo.value = null;
     nivelPrioridade.value = 'Medio'
     descricao.value = null
-    let url2 = window.location.href.split('/');
-    newUrl2 = new URL(url2[0]+url2[1]+ url2[2]+'/'+retorno);
-    window.location.replace(newUrl2);
+    let urlAtual = window.location.href.split('/');
+    urlDestino = new URL(urlAtual[0]+urlAtual[1]+ urlAtual[2]+'/'+retorno);
+    window.location.replace(urlDestino);
 }
 
-const cadastrarTarefa= document.getElementById('form-cadastrar-tarefa');
-const editarTarefa = document.getElementById('form-editar-tarefa');
+const cadastrarTarefa= document.getElementById('create-task');
+const editarTarefa = document.getElementById('edit-task');
 if(cadastrarTarefa !== null){
     cadastrarTarefa.addEventListener('submit',async (e)=> {salvarTarefa(e,'cadastrarTarefas.html',true)});
 }else if(editarTarefa !== null){
     editarTarefa.addEventListener('submit',async (e)=> {salvarTarefa(e,'listarTarefas.html',false)});
 }
-
-
-document.querySelector('button[name="minhas-tarefas"]').addEventListener('click',(e)=>{
-    const destino = window.location.href.split('/');
-    const urlDestino = new URL(destino[0]+destino[1]+ destino[2]+'/listarTarefas.html');
-    window.location.replace(urlDestino);
-});
 
 function getParams(){
     try{
@@ -117,12 +115,12 @@ function getParamTaskId(){
 
 async function pegarTaskERegistarNosCampos(){
     const tarefas = JSON.parse(localStorage.getItem('tarefas'));
-    let url = window.location.href.split('/');
+    let urlAtual = window.location.href.split('/');
     const id = getParamTaskId();
     if(id === null){
-        window.location.replace(url[0]+'/'+url[1]+'/'+url[2]+'/listarTarefas.html')
+        window.location.replace(urlAtual[0]+'/'+urlAtual[1]+'/'+urlAtual[2]+'/listarTarefas.html')
     }
-    const user = await cookieStore.get('usuarioLogado');
+    const user = await getUser(); //ao carregar o script ele ja valida se tem usuário.
     const email = user.value;
     const titulo = document.querySelector('input[name="titulo"]');
     const prazo = document.querySelector('input[name="prazo"]');
@@ -141,8 +139,21 @@ async function pegarTaskERegistarNosCampos(){
         }
     });
     if(!found){
-        window.location.replace(url[0]+'/'+url[1]+'/'+url[2]+'/listarTarefas.html');
+        window.location.replace(urlAtual[0]+'/'+urlAtual[1]+'/'+urlAtual[2]+'/listarTarefas.html');
     }
+}
+async function carregarNome() {
+    const usernameInp = document.getElementById('username');
+    const users = JSON.parse(localStorage.getItem('taskflowUsuarios'));
+    const userlogged = await getUser();
+    if( userlogged === null || userlogged.value === null){
+        let urlAtual = window.location.href.split('/');
+        urlLogin = new URL(urlAtual[0]+urlAtual[1]+ urlAtual[2]+'/login.html');
+        alert('você não esta logado, redirecionando para a pagina de login');
+        window.location.replace(urlLogin);
+        return;
+    }
+    usernameInp.innerText = `User: ${users[userlogged.value]['nome']}`;
 }
 
 if(window.location.href.split('/')[3].split('?')[0] === 'editarTarefas.html'){

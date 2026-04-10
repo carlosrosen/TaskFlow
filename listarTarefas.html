@@ -2,7 +2,7 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="src/listarTarefas.css" />
+    <link rel="stylesheet" href="src/style.css" />
     <title>📝 TaskFlow - Listar Tarefas</title>
   </head>
   <body>
@@ -15,13 +15,12 @@
           <p id="username"></p>
         </header>
         <nav>
-            <button onclick="logout('index.html')"><img src="/exit.png">Logout</button>
+            <a class="nav-buttons logout-btn" onclick="logout('index.html')"><img src="/exit.png">Logout</a>
         </nav>
     </aside>
-    <main>
-        <button onclick="alterarPagina('cadastrarTarefas.html')"><img src="/plus.png">Cadastrar tarefa</button>
-        <section id="section-cards-tarefas">
-        </section>
+    <main id="tasks-list">
+        <button id="create-task-btn" onclick="alterarPagina('cadastrarTarefas.html')"><img src="/plus.png">Cadastrar tarefa</button>
+        <section id="section-cards-tarefas"></section>
     </main>
     <div></div>
     <footer>© 2026 TaskFlow</footer>

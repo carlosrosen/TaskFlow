@@ -12,7 +12,7 @@ async function verificarSessao() {
 verificarSessao();
 
 document
-  .getElementById("auth-form")
+  .getElementById("login-form")
   .addEventListener("submit", async function (event) {
     event.preventDefault();
 

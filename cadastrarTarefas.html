@@ -2,19 +2,25 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="src/CadastrarTarefaStyle.css" />
+    <link rel="stylesheet" href="src/style.css" />
     <title>📝 TaskFlow - Cadastrar tarefas</title>
   </head>
   <body>
-    <header class="header-page">
-      <a href="index.html">
-        <p id="headerIcon">📝</p>
-        <h1 id="headerText">TaskFlow</h1>
-      </a>
-    </header>
-    <main id="main-cadastrar-tarefa">
+    <aside>
+      <header class="header-page">
+        <a href="index.html">
+          <p id="headerIcon">📝</p>
+          <h1 id="headerText">TaskFlow</h1>
+        </a>
+        <p id="username"></p>
+      </header>
+      <nav>
+        <a class="redirect-link" href="listarTarefas.html">Minhas Tarefas &rarr;</a>
+      </nav>
+    </aside>
+    <main>
       <h2>Cadastrar nova tarefas</h2>
-      <form id="form-cadastrar-tarefa" action="" method="get">
+      <form id="create-task" action="" method="get">
         <fieldset>
           <label for="titulo">Título *</label>
           <input
@@ -40,11 +46,10 @@
           cols="5"
           ></textarea>
           <label for="cor">Cor acessório da task</label>
-          <input id="color-inp" name="cor" type="color">
+          <input id="color-inp" name="cor" type="color" value="#1a5fb4">
         </fieldset>
         <button type="submit">Cadastrar Tarefa</button>
       </form>
-      <button id="tarefa-button" name="minhas-tarefas">Minhas Tarefas</button>
     </main>
     <div></div>
     <footer>© 2026 tarefaFlow</footer>

@@ -6,35 +6,39 @@
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    <header>
-      <a href="index.html">
-        <p id="headerIcon">📝</p>
-        <h1 id="headerText">TaskFlow</h1>
-      </a>
-    </header>
-    <main id="main-auth">
+    <aside>
+      <header>
+        <a href="index.html">
+          <p id="headerIcon">📝</p>
+          <h1 id="headerText">TaskFlow</h1>
+        </a>
+      </header>
+    </aside>
+    <main>
       <h1>Cadastro do Usuário</h1>
-      <form id="auth-form">
-        <fieldset id="auth-fieldtext">
+      <form id="signin-form">
+        <fieldset>
           <label for="nome">Nome de usuario:</label>
-          <input type="text" id="nome" name="nome" required />
+          <input type="text" id="nome" name="nome" placeholder="Insira seu nome de usuário" required />
           <label for="email">E-mail:</label>
-          <input type="email" id="email" name="email" required />
+          <input type="email" id="email" name="email" placeholder="Insira seu e-mail" required />
           <label for="senha">Senha:</label>
           <input
             type="password"
             id="senha"
             name="senha"
-            required
             minlength="6"
+            placeholder="Insira sua senha"
+            required
           />
           <label for="repete_senha">Repetir senha:</label>
           <input
             type="password"
             id="repete_senha"
             name="repete_senha"
-            required
             minlength="6"
+            placeholder="Insira sua senha novamente"
+            required
           />
         </fieldset>
         <button type="submit" class="cadastrar-button">Cadastrar</button>

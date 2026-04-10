@@ -17,7 +17,7 @@ function validarEmail(email) {
 }
 
 document
-  .getElementById("auth-form")
+  .getElementById("signin-form")
   .addEventListener("submit", async function (event) {
     event.preventDefault();
 

@@ -2,19 +2,25 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="src/EditarTarefaStyle.css" />
+    <link rel="stylesheet" href="src/style.css" />
     <title>📝 TaskFlow - Editar tarefas</title>
   </head>
   <body>
-    <header class="header-page">
-      <a href="index.html">
-        <p id="headerIcon">📝</p>
-        <h1 id="headerText">TaskFlow</h1>
-      </a>
-    </header>
-    <main id="main-editar-tarefa">
+    <aside>
+      <header class="header-page">
+        <a href="index.html">
+          <p id="headerIcon">📝</p>
+          <h1 id="headerText">TaskFlow</h1>
+        </a>
+        <p id="username"></p>
+      </header>
+      <nav>
+        <a class="redirect-link" href="listarTarefas.html">Minhas Tarefas &rarr;</a>
+      </nav>
+    </aside>
+    <main>
       <h2>Editar tarefa</h2>
-      <form id="form-editar-tarefa" action="" method="get">
+      <form id="edit-task" action="" method="get">
         <fieldset>
           <label for="titulo">Título *</label>
           <input
@@ -44,7 +50,6 @@
         </fieldset>
         <button type="submit">Salvar Edição</button>
       </form>
-      <button id="tarefa-button" name="minhas-tarefas">Minhas Tarefas</button>
     </main>
     <div></div>
     <footer>© 2026 tarefaFlow</footer>
