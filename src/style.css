@@ -13,15 +13,14 @@
   box-sizing: border-box;
 }
 
-body{
+body {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
   min-height: 100vh;
-
 }
 
-body>aside>header {
+body > aside > header {
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -33,24 +32,24 @@ body>aside>header {
   height: 50px;
 }
 
-#username{
+#username {
   margin-left: auto;
   margin-right: auto;
   color: var(--text-color);
 }
 
-body>aside{
+body > aside {
   display: flex;
   flex-direction: row;
 }
 
-body>aside>nav{
+body > aside > nav {
   margin: auto;
   display: flex;
   padding: 0px 15px 0px 15px;
   flex-direction: row;
   justify-content: center;
-  gap: 5px
+  gap: 5px;
 }
 
 .nav-buttons {
@@ -68,7 +67,7 @@ body>aside>nav{
   padding-right: 60px;
 }
 
-body>aside>header>a{
+body > aside > header > a {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -76,12 +75,12 @@ body>aside>header>a{
   color: inherit;
 }
 
-.no-visible-link{
+.no-visible-link {
   text-decoration: none;
   color: var(--text-color);
 }
 
-body>main{
+body > main {
   display: flex;
   flex-direction: column;
   margin-top: 20px;
@@ -92,7 +91,7 @@ body>main{
   gap: 20px;
 }
 
-body>main>section {
+body > main > section {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -100,51 +99,61 @@ body>main>section {
   align-items: center;
 }
 
-#tasks-list{
+#tasks-list {
   display: flex;
   flex-direction: column;
   flex: 1;
   align-items: normal;
 }
 
-#create-task-btn{
+#create-task-btn {
   margin-right: auto;
   margin-left: 30px;
   background-color: #488dd9;
+  color: #fff;
   border-style: none;
-  padding: 8px;
+  padding: 15px;
   border-radius: 20px;
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 5px;
+  cursor: pointer;
 }
-.logout-btn{
+.logout-btn {
   background-color: red;
+  cursor: pointer;
 }
 
-.flex-row{
+.flex-row {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
-.circle{
-  align-self: flex-start;
-  border-radius: 1000px;
-  padding: 8px;
-  margin: 4px;
+.circle {
+  border-radius: 50%;
+  padding: 12px;
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
 }
 
-.card-btn{
-  align-self: flex-start;
+.card-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  font-size: 14px;
+  border-radius: 50%;
+  border: none;
   margin-top: 4px;
   margin-bottom: auto;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 20px;
-  border-style: none;
+  cursor: pointer;
 }
-.description-card{
+
+.description-card {
   background-color: #ffffff;
   max-height: 80px;
   overflow-y: scroll;
@@ -152,17 +161,20 @@ body>main>section {
   margin-right: 10px;
   border-radius: 20px;
 }
-.edit-btn{
+
+.edit-btn {
   background-color: rgb(251, 251, 159);
   margin-left: auto;
 }
-.delete-btn{
+
+.delete-btn {
   background-color: red;
-  margin-right: 20px;
+  margin-right: 10px;
   margin-left: 5px;
+  color: white;
 }
 
-#section-cards-tarefas{
+#section-cards-tarefas {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   margin-left: 20px;
@@ -173,7 +185,7 @@ body>main>section {
   min-height: 0;
 }
 
-#section-cards-tarefas>article{
+#section-cards-tarefas > article {
   background-color: #e2e6eb;
   border-radius: 20px;
   padding-bottom: 10px;
@@ -182,8 +194,8 @@ body>main>section {
   min-width: 0;
 }
 
-.card-title{
-  background-color: #BFC1CD;
+.card-title {
+  background-color: #bfc1cd;
   border-radius: 20px;
   margin-bottom: 10px;
   padding-bottom: 3px;
@@ -195,7 +207,7 @@ body>main>section {
   overflow-wrap: anywhere;
 }
 
-#section-cards-tarefas>article>*{
+#section-cards-tarefas > article > * {
   padding-left: 20px;
 }
 
@@ -208,7 +220,7 @@ body>main>section {
   font-weight: bold;
 }
 
-body>div {
+body > div {
   background-color: var(--header-color);
   border-top-left-radius: 12px;
   right: 0;
@@ -217,7 +229,7 @@ body>div {
   align-self: flex-end;
 }
 
-body>footer {
+body > footer {
   width: 100%;
   height: 30px;
   background-color: #e2e6eb;
@@ -227,7 +239,6 @@ body>footer {
   justify-content: center;
   align-items: center;
 }
-
 
 .nav-buttons:hover {
   opacity: 0.85;
@@ -258,8 +269,7 @@ body>footer {
 
 /* Cadastro / Login */
 
-
-body>main>form{
+body > main > form {
   display: flex;
   flex-direction: column;
   background-color: var(--form-color);
@@ -270,20 +280,20 @@ body>main>form{
   box-sizing: border-box;
 }
 
-body>main>form>fieldset {
+body > main > form > fieldset {
   display: flex;
   flex-direction: column;
   border: none;
   width: 100%;
 }
 
-body>main>form label {
+body > main > form label {
   margin-bottom: 5px;
   font-size: 16px;
   font-weight: 500;
 }
 
-body>main>form>fieldset input,
+body > main > form > fieldset input,
 select,
 textarea {
   width: 100%;
@@ -295,7 +305,7 @@ textarea {
   box-sizing: border-box;
 }
 
-body>main>form button{
+body > main > form button {
   border-radius: 10px;
   border-style: none;
   color: var(--text-color);
@@ -308,7 +318,7 @@ body>main>form button{
   transition: opacity 0.2s;
 }
 
-#color-inp{
+#color-inp {
   width: 60px;
 }
 
@@ -337,69 +347,65 @@ body>main>form button{
 }
 
 @media (width <= 1000px) {
-  :root{
+  :root {
     font-size: x-large;
   }
-  body{
+  body {
     width: 100%;
   }
-  body>aside>header {
+  body > aside > header {
     justify-content: center;
     border-bottom-right-radius: 0px;
     width: 100%;
     height: 70%;
   }
-  #headerText{
+  #headerText {
     font-size: xxx-large;
   }
-  body>div {
+  body > div {
     border-top-left-radius: 0px;
     width: 100%;
   }
-  body>aside{
+  body > aside {
     display: flex;
     flex-direction: column;
     gap: 30px;
     margin-bottom: 80px;
   }
 
-  body>aside>nav {
+  body > aside > nav {
     position: static;
     justify-content: center;
     width: 100%;
   }
 
-   body>aside>nav>button{
+  body > aside > nav > button {
     padding: 10px 120px 10px 120px;
   }
 
-  body>main {
+  body > main {
     justify-content: center;
     gap: 40px;
   }
 
-  button{
+  button {
     font-size: xx-large;
   }
 
-  #section-cards-tarefas{
+  #section-cards-tarefas {
     grid-template-columns: 1fr;
     margin-left: 40px;
     margin-right: 40px;
   }
-  .description-card{
+  .description-card {
     max-height: 120px;
-
   }
-  #section-cards-tarefas>article>header{
+  #section-cards-tarefas > article > header {
     padding-left: 0;
   }
-  #section-cards-tarefas>article>header>p{
+  #section-cards-tarefas > article > header > p {
     margin-left: 20px;
     align-self: center;
-  }
-  .circle{
-    padding: 12px;
   }
 
   .nav-buttons {
