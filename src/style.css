@@ -150,8 +150,8 @@ body > main > section {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 30px;
+  min-width: 30px;
+  min-height: 30px;
   font-size: 14px;
   border-radius: 50%;
   border: none;
@@ -162,11 +162,12 @@ body > main > section {
 
 .description-card {
   background-color: #ffffff;
-  max-height: 80px;
+  height: 80px;
   overflow-y: scroll;
   margin-left: 10px;
   margin-right: 10px;
   border-radius: 20px;
+  overflow-wrap: anywhere;
 }
 
 .edit-btn {
@@ -188,6 +189,7 @@ body > main > section {
   margin-right: 20px;
   gap: 10px 10px;
   align-items: start;
+  align-content: start;
   min-width: 0;
   min-height: 0;
 }
