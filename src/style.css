@@ -52,6 +52,13 @@ body > aside > nav {
   gap: 5px;
 }
 
+.redirect-link {
+  background: transparent;
+  text-decoration: none;
+  font-size: 20px;
+  color: #000;
+}
+
 .nav-buttons {
   background-color: #488dd9;
   display: flex;
@@ -337,13 +344,6 @@ body > main > form button {
 
 .cadastrar-button:hover {
   opacity: 0.85;
-}
-
-.redirect-link {
-  background: transparent;
-  text-decoration: none;
-  font-size: 20px;
-  color: #000;
 }
 
 @media (width <= 1000px) {

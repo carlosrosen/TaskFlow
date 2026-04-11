@@ -59,6 +59,7 @@ async function carregarTarefas(){
         importanciaBox.append(priorityCircle);
         
         const task = document.createElement('article');
+        task.style.gap = '8px';
         task.appendChild(tituloBox);
         task.appendChild(prazo);
         task.appendChild(importanciaBox);

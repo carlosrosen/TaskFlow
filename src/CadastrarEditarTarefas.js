@@ -21,7 +21,7 @@ function getIdCounter(){
     return id;
 }
 
-async function salvarTarefa(e,retorno,isNewTask){
+async function salvarTarefa(e,isNewTask){
     e.preventDefault(); 
     let tarefas = JSON.parse(localStorage.getItem('tarefas'));
     let id;
@@ -80,16 +80,16 @@ async function salvarTarefa(e,retorno,isNewTask){
     nivelPrioridade.value = 'Medio'
     descricao.value = null
     let urlAtual = window.location.href.split('/');
-    urlDestino = new URL(urlAtual[0]+urlAtual[1]+ urlAtual[2]+'/'+retorno);
+    urlDestino = new URL(urlAtual[0]+urlAtual[1]+ urlAtual[2]+'/listarTarefas.html');
     window.location.replace(urlDestino);
 }
 
 const cadastrarTarefa= document.getElementById('create-task');
 const editarTarefa = document.getElementById('edit-task');
 if(cadastrarTarefa !== null){
-    cadastrarTarefa.addEventListener('submit',async (e)=> {salvarTarefa(e,'cadastrarTarefas.html',true)});
+    cadastrarTarefa.addEventListener('submit',async (e)=> {salvarTarefa(e,true)});
 }else if(editarTarefa !== null){
-    editarTarefa.addEventListener('submit',async (e)=> {salvarTarefa(e,'listarTarefas.html',false)});
+    editarTarefa.addEventListener('submit',async (e)=> {salvarTarefa(e,false)});
 }
 
 function getParams(){
