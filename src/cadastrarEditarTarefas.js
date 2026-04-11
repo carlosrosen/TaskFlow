@@ -79,12 +79,10 @@ async function salvarTarefa(e, isNewTask) {
   }
   alert(`Tarefa ${titulo.value} salvo com sucesso`);
   localStorage.setItem("tarefas", JSON.stringify(tarefas));
-  localStorage.setItem("id", `${id}`);
+  if(isNewTask){
+    localStorage.setItem("id", `${id}`);
+  }
 
-  titulo.value = null;
-  prazo.value = null;
-  nivelPrioridade.value = "Medio";
-  descricao.value = null;
   let urlAtual = window.location.href.split("/");
   urlDestino = new URL(
     urlAtual[0] + urlAtual[1] + urlAtual[2] + "/listarTarefas.html",
