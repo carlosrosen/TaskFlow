@@ -15,11 +15,13 @@
         <p id="username"></p>
       </header>
       <nav>
-        <a class="redirect-link" href="listarTarefas.html">Minhas Tarefas &rarr;</a>
+        <a class="redirect-link nav-buttons" href="listarTarefas.html"
+          >Minhas Tarefas</a
+        >
       </nav>
     </aside>
     <main>
-      <h2>Editar tarefa</h2>
+      <h1>Editar tarefa</h1>
       <form id="edit-task" action="" method="get">
         <fieldset>
           <label for="titulo">Título *</label>
@@ -41,18 +43,18 @@
           </select>
           <label name="descricao">Descrição</label>
           <textarea
-          name="descricao"
-          placeholder="Insira a descrição"
-          cols="5"
+            name="descricao"
+            placeholder="Insira a descrição"
+            cols="5"
           ></textarea>
           <label for="cor">Cor acessório da task</label>
-          <input id="color-inp" name="cor" type="color">
+          <input id="color-inp" name="cor" type="color" />
         </fieldset>
         <button type="submit">Salvar Edição</button>
       </form>
     </main>
     <div></div>
     <footer>© 2026 tarefaFlow</footer>
-    <script src="src/CadastrarEditarTarefas.js"></script>
+    <script src="src/cadastrarEditarTarefas.js"></script>
   </body>
 </html>
