@@ -20,7 +20,7 @@ Este projeto foi desenvolvido como trabalho da disciplina de Desenvolvimento Web
 - CSS3
 - Javascript
 
-# Pré-requisito:
+## Pré-requisito:
 
 Antes de executar o projeto, é necessário ter instalado:
 
