@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="src/style.css" />
+    <title>📝 TaskFlow - Cadastrar tarefas</title>
+  </head>
+  <body>
+    <aside>
+      <header class="header-page">
+        <a href="index.html">
+          <p id="headerIcon">📝</p>
+          <h1 id="headerText">TaskFlow</h1>
+        </a>
+        <p id="username"></p>
+      </header>
+      <nav>
+        <a class="redirect-link nav-buttons" href="listarTarefas.html">
+          Minhas Tarefas
+        </a>
+      </nav>
+    </aside>
+    <main>
+      <h1>Cadastrar nova tarefas</h1>
+      <form id="create-task" action="" method="get">
+        <fieldset>
+          <label for="titulo">Título *</label>
+          <input
+            type="text"
+            name="titulo"
+            placeholder="Insira o título da tarefa"
+            maxlength="50"
+            required
+          />
+          <label for="prazo">Prazo *</label>
+          <input name="prazo" type="datetime-local" required />
+          <label for="nivel-prioridade">Nivel de prioridade</label>
+          <select name="nivel-prioridade">
+            <option value="Urgente">Urgente</option>
+            <option value="Alto">Alto</option>
+            <option value="Medio" selected>Médio</option>
+            <option value="Baixo">Baixo</option>
+          </select>
+          <label name="descricao">Descrição</label>
+          <textarea
+            name="descricao"
+            placeholder="Insira a descrição"
+            cols="5"
+          ></textarea>
+          <label for="cor">Cor acessório da task</label>
+          <input id="color-inp" name="cor" type="color" value="#1a5fb4" />
+        </fieldset>
+        <button type="submit">Cadastrar Tarefa</button>
+      </form>
+    </main>
+    <div></div>
+    <footer>© 2026 tarefaFlow</footer>
+    <script src="src/cadastrarEditarTarefas.js"></script>
+  </body>
+</html>

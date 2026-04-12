@@ -1,0 +1,421 @@
+:root {
+  --header-color: #313131;
+  --button-color: #488dd9;
+  --footer-color: #dadde6;
+  --form-color: #bfc1cd;
+  --text-color: #ffffff;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+body > aside > header {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  color: var(--text-color);
+  background-color: var(--header-color);
+  border-bottom-right-radius: 12px;
+  left: 0;
+  width: 75%;
+  height: 50px;
+}
+
+#username {
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--text-color);
+}
+
+body > aside {
+  display: flex;
+  flex-direction: row;
+}
+
+body > aside > nav {
+  margin: auto;
+  display: flex;
+  padding: 0px 15px 0px 15px;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5px;
+}
+
+.redirect-link {
+  background: transparent;
+  text-decoration: none;
+  font-size: 20px;
+  color: #000;
+}
+
+.nav-buttons {
+  background-color: #488dd9;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  border: none;
+  text-decoration: none;
+  color: var(--text-color);
+  padding: 8px;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+body > aside > header > a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.no-visible-link {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+body > main {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  gap: 20px;
+}
+
+body > main > section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#tasks-list {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: normal;
+}
+
+#create-task-btn {
+  margin-right: auto;
+  margin-left: 30px;
+  background-color: #488dd9;
+  color: #fff;
+  border-style: none;
+  padding: 15px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+.logout-btn {
+  background-color: red;
+  cursor: pointer;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.circle {
+  border-radius: 50%;
+  padding: 12px;
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+}
+
+.card-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
+  min-height: 30px;
+  font-size: 14px;
+  border-radius: 50%;
+  border: none;
+  margin-top: 4px;
+  margin-bottom: auto;
+  cursor: pointer;
+}
+
+.description-card {
+  background-color: #ffffff;
+  height: 80px;
+  overflow-y: scroll;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 20px;
+  overflow-wrap: anywhere;
+}
+
+.edit-btn {
+  background-color: rgb(251, 251, 159);
+  margin-left: auto;
+}
+
+.delete-btn {
+  background-color: red;
+  margin-right: 10px;
+  margin-left: 5px;
+  color: white;
+}
+
+#section-cards-tarefas {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-left: 20px;
+  margin-right: 20px;
+  gap: 10px 10px;
+  align-items: start;
+  align-content: start;
+  min-width: 0;
+  min-height: 0;
+}
+
+#section-cards-tarefas > article {
+  background-color: #e2e6eb;
+  border-radius: 20px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.card-title {
+  background-color: #bfc1cd;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  padding-bottom: 3px;
+  align-items: center;
+
+  min-width: 0;
+
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+#section-cards-tarefas > article > * {
+  padding-left: 20px;
+}
+
+#headerIcon {
+  font-size: 30px;
+  margin-left: 10px;
+}
+#headerText {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+body > div {
+  background-color: var(--header-color);
+  border-top-left-radius: 12px;
+  right: 0;
+  width: 75%;
+  height: 50px;
+  align-self: flex-end;
+}
+
+body > footer {
+  width: 100%;
+  height: 30px;
+  background-color: #e2e6eb;
+  color: #000000;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-buttons:hover {
+  opacity: 0.85;
+}
+
+#sectionImg {
+  width: 400px;
+  margin-left: 35px;
+}
+
+.section-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  text-decoration: none;
+  color: var(--text-color);
+  background-color: var(--button-color);
+  border-radius: 20px;
+  margin-top: 30px;
+  width: 400px;
+  height: 50px;
+}
+
+.section-button:hover {
+  opacity: 0.85;
+}
+
+/* Cadastro / Login */
+
+body > main > form {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--form-color);
+  width: 90%;
+  max-width: 500px;
+  padding: 40px;
+  border-radius: 0 50px 0px 50px;
+  box-sizing: border-box;
+}
+
+body > main > form > fieldset {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  width: 100%;
+}
+
+body > main > form label {
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+body > main > form > fieldset input,
+select,
+textarea {
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+body > main > form button {
+  border-radius: 10px;
+  border-style: none;
+  color: var(--text-color);
+  background-color: var(--button-color);
+  width: 100%;
+  height: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: opacity 0.2s;
+}
+
+#color-inp {
+  width: 60px;
+}
+
+.cadastrar-button {
+  border-radius: 10px;
+  border-style: none;
+  color: var(--text-color);
+  background-color: var(--button-color);
+  width: 100%;
+  height: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: opacity 0.2s;
+}
+
+.cadastrar-button:hover {
+  opacity: 0.85;
+}
+
+@media (width <= 1000px) {
+  :root {
+    font-size: x-large;
+  }
+  body {
+    width: 100%;
+  }
+  body > aside > header {
+    justify-content: center;
+    border-bottom-right-radius: 0px;
+    width: 100%;
+    height: 70%;
+  }
+  #headerText {
+    font-size: xxx-large;
+  }
+  body > div {
+    border-top-left-radius: 0px;
+    width: 100%;
+  }
+  body > aside {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 80px;
+  }
+
+  body > aside > nav {
+    position: static;
+    justify-content: center;
+    width: 100%;
+  }
+
+  body > aside > nav > button {
+    padding: 10px 120px 10px 120px;
+  }
+
+  body > main {
+    justify-content: center;
+    gap: 40px;
+  }
+
+  button {
+    font-size: xx-large;
+  }
+
+  #section-cards-tarefas {
+    grid-template-columns: 1fr;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+  .description-card {
+    max-height: 120px;
+  }
+  #section-cards-tarefas > article > header {
+    padding-left: 0;
+  }
+  #section-cards-tarefas > article > header > p {
+    margin-left: 20px;
+    align-self: center;
+  }
+
+  .nav-buttons {
+    width: 300px;
+    height: 50px;
+  }
+
+  section {
+    margin-top: 0;
+  }
+}
