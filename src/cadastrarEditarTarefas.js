@@ -34,9 +34,7 @@ async function salvarTarefa(e, isNewTask) {
   const email = user.value;
   const titulo = document.querySelector('input[name="titulo"]');
   const prazo = document.querySelector('input[name="prazo"]');
-  const nivelPrioridade = document.querySelector(
-    'select[name="nivel-prioridade"]',
-  );
+  const nivelPrioridade = document.querySelector('select[name="nivel-prioridade"]');
   const cor = document.getElementById("color-inp");
   const descricao = document.querySelector('textarea[name="descricao"]');
   if (titulo.value === "" || titulo.value === null) {
@@ -49,7 +47,6 @@ async function salvarTarefa(e, isNewTask) {
   }
   if (prazo.value === "" || prazo.value === null) {
     alert("Defina um prazo para a realização da tarefa.");
-    console.log("valor do prazo: ", prazo.value);
     return;
   }
   const newTask = {
@@ -65,6 +62,7 @@ async function salvarTarefa(e, isNewTask) {
   }
   if (tarefas[email] === undefined) {
     tarefas[email] = [newTask];
+    id++;
   } else {
     if (isNewTask) {
       tarefas[email].push(newTask);
@@ -73,6 +71,7 @@ async function salvarTarefa(e, isNewTask) {
       for (let i = 0; i < tarefas[email].length; i++) {
         if (tarefas[email][i]["id"] === id) {
           tarefas[email][i] = newTask;
+          break;
         }
       }
     }
